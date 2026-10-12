@@ -360,6 +360,26 @@ When responding to user requests, match the output format to the request type:
 
 ---
 
+## Agent OS — Standards & Spec Workflow
+
+Agent OS skills keep the agent aligned with how this team builds. Project memory lives in `agent-os/`.
+
+| Skill | Use it to |
+|-------|-----------|
+| `/agent-os-plan-product` | Write `agent-os/product/` mission, roadmap, tech stack |
+| `/agent-os-discover-standards` | Turn conventions into short standards in `agent-os/standards/` |
+| `/agent-os-index-standards` | Rebuild `agent-os/standards/index.yml` |
+| `/agent-os-inject-standards` | Load the relevant standards before building, into a skill, or into a plan |
+| `/agent-os-shape-spec` | Shape a feature in plan mode and save it to `agent-os/specs/` |
+
+Rules:
+1. Before implementation work, run `/agent-os-inject-standards` to load matching standards.
+2. For significant features, enter plan mode and run `/agent-os-shape-spec`.
+3. Keep standards short — they load into context. One concept per file.
+4. When a standard and this file disagree, update the standard so both match.
+
+---
+
 ## File Reference Map
 
 ```
@@ -390,4 +410,11 @@ frameworks/
 ├── react-tailwind.md     ← React 19 + Tailwind v4 + TypeScript + cva patterns
 ├── nextjs.md             ← Next.js 15 App Router patterns
 └── swiftui.md            ← SwiftUI 6 + Dynamic Type + platform adaptation
+
+agent-os/
+├── standards/            ← Short design standards + index.yml (used by inject/shape skills)
+├── product/              ← mission.md, roadmap.md, tech-stack.md (from plan-product)
+└── specs/                ← Dated spec folders (from shape-spec)
+
+.claude/skills/agent-os-*/ ← Agent OS v3 workflows: discover, index, inject standards; plan product; shape spec
 ```

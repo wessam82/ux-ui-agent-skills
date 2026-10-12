@@ -17,6 +17,7 @@ A comprehensive starter kit of structured instructions and design tokens that tr
 | **Design Review** | Scores designs across 6 dimensions with Nielsen's 10 Heuristics and a structured findings table |
 | **Design-to-Code Handoff** | Provides token mapping, 8-state documentation, edge case checklists, and animation specs |
 | **Prototyping & Research** | Guides through a 5-level fidelity ladder, user journey mapping, and usability testing scripts |
+| **Standards & Spec Workflow** | [Agent OS](https://github.com/buildermethods/agent-os) skills capture team standards, load them before work, and shape specs in plan mode |
 
 ---
 
@@ -81,11 +82,34 @@ Open the project in **Claude Code** or any Claude-powered IDE. The `CLAUDE.md` f
 │   ├── design-to-code.md      # Handoff workflow, state docs, edge cases, definition of done
 │   └── prototyping.md         # Fidelity ladder, journey mapping, usability testing scripts
 │
-└── frameworks/                # Framework-specific implementation patterns
-    ├── react-tailwind.md      # React 19 + Tailwind v4 + TypeScript + cva
-    ├── nextjs.md              # Next.js 15 App Router patterns
-    └── swiftui.md             # SwiftUI 6 + Dynamic Type + platform adaptation
+├── frameworks/                # Framework-specific implementation patterns
+│   ├── react-tailwind.md      # React 19 + Tailwind v4 + TypeScript + cva
+│   ├── nextjs.md              # Next.js 15 App Router patterns
+│   └── swiftui.md             # SwiftUI 6 + Dynamic Type + platform adaptation
+│
+├── agent-os/                  # Agent OS project memory
+│   ├── standards/             # Short design standards + index.yml
+│   ├── product/               # Mission, roadmap, tech stack
+│   └── specs/                 # Shaped feature specs
+│
+└── .claude/skills/agent-os-*  # Agent OS skills (see below)
 ```
+
+---
+
+## Agent OS Skills
+
+Five workflow skills from [Agent OS v3](https://github.com/buildermethods/agent-os) (MIT, Builder Methods):
+
+| Skill | What it does |
+|-------|--------------|
+| `/agent-os-plan-product` | Interviews you and writes the product mission, roadmap, and tech stack |
+| `/agent-os-discover-standards` | Finds your team's conventions and writes them as short standards |
+| `/agent-os-index-standards` | Rebuilds the standards index so the right rules get matched to a task |
+| `/agent-os-inject-standards` | Loads the matching standards before you build, plan, or write a skill |
+| `/agent-os-shape-spec` | Shapes a feature in plan mode and saves the spec to `agent-os/specs/` |
+
+The kit ships with five starter standards (tokens, component states, accessibility, UX copy, tech stack) drawn from `CLAUDE.md`, so `/agent-os-inject-standards` works on day one.
 
 ---
 

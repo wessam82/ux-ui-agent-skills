@@ -1,0 +1,17 @@
+accessibility:
+  baseline:
+    description: WCAG 2.2 AA minimum checks for keyboard, focus, contrast, target size, screen readers
+
+content:
+  ux-copy:
+    description: UI copy voice, error message and empty state patterns
+
+design:
+  component-states:
+    description: Required interactive states, feedback timing, and motion rules for components
+  tokens:
+    description: 3-tier design token use, naming, DTCG format, dark mode, spacing scale
+
+global:
+  tech-stack:
+    description: Frameworks and libraries used for web and Apple platform output
